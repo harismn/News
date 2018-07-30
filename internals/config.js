@@ -29,9 +29,10 @@ const ReactBoilerplate = {
         'minimist',
         'sanitize.css',
         'morgan',
-        'mysql2',
-        'sequelize',
-        'sequelize-cli'
+        'mongoose',
+        'body-parser',
+        'cookie-parser'
+        
 
       ],
 
