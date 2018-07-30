@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "123qwert",
+    "password": "anggraini99",
     "database": "hellofarmer",
     "host": "127.0.0.1",
     "dialect": "mysql"
