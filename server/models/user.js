@@ -27,7 +27,7 @@ var UserSchema = new mongoose.Schema({
         index: true
     },
     phone: {
-        type: Number,
+        type: String,
         index: true
     },
     role: {

@@ -1,9 +1,8 @@
 const express = require('express');
-const userController = require('../controllers/users');
+const authorController = require('../controllers/author');
 const router = express.Router();
 
-router.route('/').get(userController.listUser);
-
+router.route('/').get(authorController.listAuthor);
 
 
 //router.route('/patient_record/:id').get(patientController.recordPatients);

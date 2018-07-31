@@ -19,6 +19,8 @@ const app = express();
 // 
 const user = require('./routes/user');
 const visitor = require('./routes/visitor');
+const author = require('./routes/author')
+const article = require('./routes/article');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,7 +29,10 @@ app.use(cookieParser());
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
+app.use('/user', user)
 app.use('/visitor', visitor)
+app.use('/article', article)
+app.use('/author', author)
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
