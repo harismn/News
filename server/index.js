@@ -19,13 +19,10 @@ const app = express();
 // 
 const user = require('./routes/user');
 const visitor = require('./routes/visitor');
-<<<<<<< HEAD
 const author = require('./routes/author')
 const article = require('./routes/article');
-=======
 const comment = require('./routes/comment');
 
->>>>>>> origin/dugong
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
