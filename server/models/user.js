@@ -2,8 +2,6 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/News');
 
-console.log('udah nyambung belum')
-
 mongoose.models = {};
 mongoose.modelSchemas = {}
  

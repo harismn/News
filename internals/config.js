@@ -31,7 +31,8 @@ const ReactBoilerplate = {
         'morgan',
         'mongoose',
         'body-parser',
-        'cookie-parser'
+        'cookie-parser',
+        'nodemon',
         
 
       ],

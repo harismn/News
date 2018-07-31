@@ -1,22 +1,20 @@
-const User = require('../models/user');
+const Visitor = require('../models/visitor');
 const mongoose = require('mongoose');
 const db = mongoose.connection
 
-
-const listUser = (req, res) => {
-    User.find()
-    .select("firstname email lastname phone _id ")
+const listVisitor = (req, res) => {
+    Visitor.find()
+    .select('_id, user_id, gender, address')
     .exec()
     .then(docs => {
         res.status(200).json({
             count: docs.length,
-            user: docs.map(doc => {
+            visitor: docs.map(doc => {
                 return {
-                    firstname: doc.firstname,
-                    lastname: doc.lastname,
-                    email: doc.email,
-                    phone: doc.phone,
                     _id: doc._id,
+                    user_id: doc.user_id,
+                    gender: doc.gender,
+                    address: doc.address,
                     request: {
                         type: 'GET',
                         url: "http://localhost:3000/user/" + doc._id
@@ -34,5 +32,5 @@ const listUser = (req, res) => {
 }
 
 module.exports = {
-    listUser,
+    listVisitor,
 }

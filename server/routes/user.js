@@ -3,7 +3,7 @@ const userController = require('../controllers/users');
 const router = express.Router();
 
 router.route('/').get(userController.listUser);
-console.log('mas bimo')
+
 
 
 
