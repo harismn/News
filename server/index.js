@@ -19,8 +19,13 @@ const app = express();
 // 
 const user = require('./routes/user');
 const visitor = require('./routes/visitor');
+<<<<<<< HEAD
 const author = require('./routes/author')
 const article = require('./routes/article');
+=======
+const comment = require('./routes/comment');
+
+>>>>>>> origin/dugong
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,6 +38,7 @@ app.use('/user', user)
 app.use('/visitor', visitor)
 app.use('/article', article)
 app.use('/author', author)
+app.use('/comment', comment)
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
