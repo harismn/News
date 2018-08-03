@@ -144,7 +144,9 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-polyfill": "6.26.0",
+    "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "chalk": "^2.4.1",
     "compression": "1.7.2",
@@ -158,6 +160,7 @@
     "intl": "1.2.5",
     "invariant": "2.2.4",
     "ip": "1.1.5",
+    "jsonwebtoken": "^8.3.0",
     "lodash": "4.17.10",
     "minimist": "1.2.0",
     "mongoose": "^5.2.5",
@@ -177,6 +180,7 @@
     "redux-saga": "0.16.0",
     "reselect": "3.0.1",
     "sanitize.css": "4.1.0",
+    "semantic-ui-react": "^0.82.1",
     "styled-components": "3.3.2",
     "warning": "4.0.1",
     "whatwg-fetch": "2.0.4"

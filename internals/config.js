@@ -33,6 +33,10 @@ const ReactBoilerplate = {
         'body-parser',
         'cookie-parser',
         'nodemon',
+        'jsonwebtoken',
+        'bcrypt',
+        'axios',
+        'semantic-ui-react'
         
 
       ],

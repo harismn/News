@@ -22,6 +22,7 @@ const visitor = require('./routes/visitor');
 const author = require('./routes/author')
 const article = require('./routes/article');
 const comment = require('./routes/comment');
+const register = require('./routes/register')
 
 
 app.use(bodyParser.json());
@@ -36,7 +37,7 @@ app.use('/visitor', visitor)
 app.use('/article', article)
 app.use('/author', author)
 app.use('/comment', comment)
-
+app.use('/', register)
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
   outputPath: resolve(process.cwd(), 'build'),
