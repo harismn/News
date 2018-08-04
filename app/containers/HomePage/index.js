@@ -10,16 +10,29 @@
  */
 
 import React from 'react';
+import styled from 'styled-components'
+import Header from '../../components/Header/index'
+import Main from '../../components/Main/index'
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+
+const AppWrapper = styled.div`
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  min-height: 100%;
+  padding: 0;
+  flex-direction: column;
+`;
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
   render() {
     return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
+      <AppWrapper>
+        <Header />>
+        <Main />>
+      </AppWrapper>
     );
   }
 }

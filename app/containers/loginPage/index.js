@@ -1,5 +1,11 @@
+
+import { Button, Checkbox, Form } from 'semantic-ui-react'
 import React, { Component } from 'react';
 import api from '../../api/user';
+import './Login.css'
+import styled from 'styled-components'
+
+
 
 class Login extends Component {
   constructor(props) {
@@ -13,7 +19,7 @@ class Login extends Component {
   handleInputChange(stateFieldName, event) {
     let newState = {}
     newState[stateFieldName] = event.target.value
-  
+
     this.setState(newState)
   }
 
@@ -29,18 +35,54 @@ class Login extends Component {
       })
   }
 
-  render() {   
+  
+
+  render() {
     return (
+      <AppWrapper>
       <div className="Login">
         <h2>Login</h2>
-        <form>
-          Email: <input type="text" value={this.state.email} onChange={(e) => {this.handleInputChange("email", e)}} /> <br/>
-          Password: <input type="password" value={this.state.password} onChange={(e) => {this.handleInputChange("password", e)}}  /> <br/>
-          <button onClick={(e) => this.handleClick(e)}>Login</button>
-        </form>
+        {/* <Form>
+
+          <Form.Field>
+            <label>Email </label> <br />
+             <input type="text" placeholder='Email' value={this.state.email} onChange={(e) => { this.handleInputChange("email", e) }} /> <br />
+          </Form.Field>
+          <Form.Field>
+            <label>Password</label> <br />
+            <input type="password" placeholder='password' value={this.state.password} onChange={(e) => { this.handleInputChange("password", e) }} /> <br />
+          </Form.Field>
+
+          <Button type='submit' onClick={(e) => this.handleClick(e)}>Login</Button>
+        </Form> */}
+          <Form>
+    <Form.Field>
+      <label>First Name</label>
+      <input placeholder='First Name' />
+    </Form.Field>
+    <Form.Field>
+      <label>Last Name</label>
+      <input placeholder='Last Name' />
+    </Form.Field>
+    <Form.Field>
+      <Checkbox label='I agree to the Terms and Conditions' />
+    </Form.Field>
+    <Button type='submit'>Submit</Button>
+  </Form>
+
       </div>
+      </AppWrapper>
     );
   }
 }
+
+const AppWrapper = styled.div
+`max-width: 90%;
+ margin:;
+ display: flex;
+ min-height: 40%;
+ padding: 1000;
+ flex-direction: column;
+ `;
 
 export default Login;

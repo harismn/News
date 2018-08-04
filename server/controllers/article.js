@@ -31,6 +31,31 @@ const listArticle = (req, res, next) => {
     });
 }
 
+const postArticle = (req, res, next) => {
+    let article = new Article({
+    _id: new mongoose.Types.ObjectId(),
+    idArticle: req.body.idArticle,
+    idAuthor: req.body.idAuthor,
+    content: req.body.content
+    });
+    article.save
+    .then(result => {
+        res.status(201).json({
+            message: "Create new Article saccesfully",
+            createArticle: {
+                _id: result._id,
+                idArticle: result.idArticle,
+                idAuthor: result.idAuthor,
+                content: result.content,
+                request: {
+                    type: 'POST',
+                    url: `http://localhost:3000/article/${doc._id}`,
+                }
+            }
+        })
+    })
+}
+
 module.exports = {
     listArticle,
 }
