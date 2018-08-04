@@ -19,6 +19,16 @@ var ArticleSchema = new mongoose.Schema({
         type: String,
         index: true
     },
+    comments: [{
+      text: String,
+      created: { type: Date, default: Date.now },
+      postedBy: { type: mongoose.Schema.ObjectId, ref: 'Author'}
+    }],
+    postedBy: {type: mongoose.Schema.ObjectId, ref: 'Author'},
+    created: {
+      type: Date,
+      default: Date.now
+    }
 }, {
     timestamps: true
 });
