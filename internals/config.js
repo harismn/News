@@ -36,7 +36,9 @@ const ReactBoilerplate = {
         'jsonwebtoken',
         'bcrypt',
         'axios',
-        'semantic-ui-react'
+        'semantic-ui-react',
+        'fs',
+        'formidable'
         
 
       ],
