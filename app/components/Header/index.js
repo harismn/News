@@ -38,14 +38,14 @@ class Header extends React.Component {
 
               <Link to="/service">service</Link>
             </li>
-            {/* <li>
-              {!api.isLoggedIn() && <Link to="/signup">Signup</Link>}
+            <li>
+              {!api.isLoggedIn() && <Link to="/Register">Register</Link>}
               </li>
               <li>
-              {!api.isLoggedIn() && <Link to="patients/login">Login</Link>}
-              </li> */}
+              {!api.isLoggedIn() && <Link to="/loginPage">Login</Link>}
+              </li>
               <li>
-              {api.isLoggedIn() && <Link to="/patients/login" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
+              {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
  
 
             </li>

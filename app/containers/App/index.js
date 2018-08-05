@@ -16,7 +16,8 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import Login from 'containers/loginPage/index'
+import Login from 'containers/loginPage/Loadable'
+import Register from 'containers/Register/Loadable'
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path='/loginPage'  component={Login} />
+        <Route path='/Register' component={Register} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

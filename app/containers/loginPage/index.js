@@ -28,7 +28,7 @@ class Login extends Component {
     api.signin(this.state.email, this.state.password)
       .then(result => {
         console.log('SUCCESS!')
-        this.props.history.push("/homepage") // Redirect to the home page
+        this.props.history.push("/") // Redirect to the home page
       })
       .catch(err => {
         console.log('ERROR')
@@ -42,7 +42,7 @@ class Login extends Component {
       <AppWrapper>
       <div className="Login">
         <h2>Login</h2>
-        {/* <Form>
+        <Form>
 
           <Form.Field>
             <label>Email </label> <br />
@@ -54,8 +54,8 @@ class Login extends Component {
           </Form.Field>
 
           <Button type='submit' onClick={(e) => this.handleClick(e)}>Login</Button>
-        </Form> */}
-          <Form>
+        </Form>
+          {/* <Form>
     <Form.Field>
       <label>First Name</label>
       <input placeholder='First Name' />
@@ -68,7 +68,7 @@ class Login extends Component {
       <Checkbox label='I agree to the Terms and Conditions' />
     </Form.Field>
     <Button type='submit'>Submit</Button>
-  </Form>
+  </Form> */}
 
       </div>
       </AppWrapper>
