@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const service = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:3000/user',
+  baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:3000/',
 });
 
 const errHandler = err => {
