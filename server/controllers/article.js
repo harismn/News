@@ -7,16 +7,17 @@ const db = mongoose.connection
 
 const listArticle = (req, res, next) => {
     Article.find()
-    .select("idArticle idArticle id_")
+    .select("_id tittle content postedBy created")
     .then(docs => {
         res.status(200).json({
             count: docs.length,
             user: docs.map(doc => {
                 return {
-                    idArticle: doc.idArticle,
-                    idAuthor: doc.idAuthor,
+                    tittle : doc.tittle,
                     content: doc.content,
+                    postedBy :doc.postedBy,
                     _id: doc._id,
+                    created:doc.created,
                     request: {
                         type: 'GET',
                         url: `http://localhost:3000/article/${doc._id}`,
