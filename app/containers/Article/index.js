@@ -19,23 +19,22 @@ class Articles extends React.Component {
   render() {
   return (
 
-    {
-      this.state.articles.map((list, index) => {
-         return (
-           <tr key={index}>
+    
     <div className="blogpost">
+     {this.state.articles.map((news, i) => {
+return (
         <div className="image-wrapper">
           <img className="responsive-img" src="http://loremflickr.com/320/240" />
         </div>
-        <div className="content">
-          <h4>This is a standard post</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+        <div className="content"  key={i}>
+          <h4>{news.tittle}</h4>
+          <p>{news.content}</p>
         </div>
         <div className="footer">
           <div className="row">
             <div className="footer-content">
               <i className="material-icons">today</i>
-              <span>Feb 26, 2017</span>
+              <span>{this.formatDate(news.created)}</span>
             </div>
             <div className="footer-content">
               <i className="material-icons">chat bubble outline</i>
@@ -46,8 +45,9 @@ class Articles extends React.Component {
         <div className="read-more">
           <a href="">Read more</a>
         </div>
+          );
+        })};
     </div>
-    
   );
 };
 }
