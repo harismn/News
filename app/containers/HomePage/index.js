@@ -15,8 +15,8 @@ import Header from '../../components/Header/index'
 import Main from '../../components/Main/index'
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
-import News from '../../components/latestNews/index';
-import Form from '../../components/postArticle/index'
+import News from '../../containers/latestNews/index';
+//import Form from '../../components/postArticle/index'
 
 const AppWrapper = styled.div`
   max-width: 100%;
@@ -35,7 +35,6 @@ export default class HomePage extends React.PureComponent {
         <Header />
         <Main />
         <News/>
-        <Form/>
       </AppWrapper>
     );
   }

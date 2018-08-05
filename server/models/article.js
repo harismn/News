@@ -7,9 +7,12 @@ mongoose.modelSchemas = {}
  
 var ArticleSchema = new mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    content: {
+    tittle: {
         type: String,
         index: true
+    },
+    content: {
+        type: String,
     },
     photo: {
         data: Buffer,
