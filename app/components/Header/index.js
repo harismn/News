@@ -23,7 +23,9 @@ class Header extends React.Component {
     return (
       <nav className="teal lighten-1">
         <div className="nav-wrapper">
-          <a href="" className="brand-logo left">Logo</a>
+          <a href="" className="brand-logo left">
+          <img src={require('../../images/farmer.png')} width="50" height="50" />
+          </a>
           <a href="#" data-activates="mobile-demo" className="button-collapse right">
             <i className="material-icons">menu</i>
           </a>
@@ -46,8 +48,6 @@ class Header extends React.Component {
               </li>
               <li>
               {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
- 
-
             </li>
           </ul>
         </div>
