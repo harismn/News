@@ -7,18 +7,14 @@ mongoose.modelSchemas = {}
  
 var ArticleSchema = new mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    idArticle: {
-        type: String,
-        index: true
-    },
-    idAuthor: {
-        type: String,
-        index: true
-    },
     content: {
         type: String,
         index: true
     },
+    photo: {
+        data: Buffer,
+        contentType: String
+      },
     comments: [{
       text: String,
       created: { type: Date, default: Date.now },
