@@ -4,9 +4,8 @@ const router = express.Router();
 
 router.route('/').get(articleController.listArticle);
 router.route('/').post(articleController.createArticle);
-router.route('/').delete(articleController.deleteArticle);
+router.route('/:articleId').delete(articleController.deleteArticle);
+router.route('/:articleId').get(articleController.deleteArticle);
 
-
-//router.route('/patient_record/:id').get(patientController.recordPatients);
 
 module.exports = router;

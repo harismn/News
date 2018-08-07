@@ -17,7 +17,7 @@ const listArticle = (req, res, next) => {
                     content: doc.content,
                     postedBy :doc.postedBy,
                     _id: doc._id,
-                    created:doc.created,
+                    created: new Date(),
                     request: {
                         type: 'GET',
                         url: `http://localhost:3000/article/${doc._id}`,
@@ -73,7 +73,7 @@ const createArticle = (req, res, next) => {
     .exec()
     .then(result => {
         res.status(200).json({
-            message:'Medication deleted',
+            message:'Article deleted',
             request: {
                 type: 'POST',
                 url: 'http://localhost:3000/article',

@@ -18,47 +18,57 @@ class Articles extends React.Component {
         if (this.state.isMounted) {
           this.setState({ isMounted: false });
           {
-            // do something
-            // this.props.onClick(...)
           }
         }
+      }
+
+      formatDate(date) {
+        var time = new Date(date);
+        var year = time.getFullYear();
+        var day = time.getDate();
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var month = time.getMonth() + 1;
+        var composedTime =
+          day +
+          '/' +
+          month +
+          '/' +
+          year +
+          ' | ' +
+          hour +
+          ':' +
+          (minute < 10 ? '0' + minute : minute);
+        return composedTime;
       }
 
   componentWillMount() {
     this.mounted = true;
     api.getArticles()
       .then( articles => {
-        console.log("component will mount", articles.user)
+        console.log("component will mount", articles)
         this.setState({articles:articles.user})
       })
       .catch(err => console.error(err))
   }
 
-  // componentWillUnmount() {
-  //   this.mounted = false;
-  //   clearInterval(this.interval)
-  // 
 
   renderList(){
 
-    console.log("from render list")
-    console.log(this.state.articles)
-
-    const self = this
-    let render = this.state.articles ? this.state.articles.map((newsm, i) => (
+    let render = this.state.articles ? this.state.articles.map((news, i) => (
       <React.Fragment key={i}>
         <div className="image-wrapper">
           <img className="responsive-img" src="http://loremflickr.com/320/240" />
         </div>
         <div className="content" >
           <h4>{news.tittle}</h4>
-          <p>{news.content}</p>
+          <p>{(news.content).substr(0, 250)}</p>
         </div>
         <div className="footer">
           <div className="row">
             <div className="footer-content">
               <i className="material-icons">today</i>
-              <span>{news.created}</span>
+              <span>{this.formatDate(news.created)}</span>
             </div>
             <div className="footer-content">
               <i className="material-icons">chat bubble outline</i>
@@ -76,8 +86,6 @@ class Articles extends React.Component {
   }
 
   render() {
-    // console.log('render disini')
-   // console.log("state article", this.state.articles)
     return (
       
       <div className="blogpost">
