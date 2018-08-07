@@ -14,7 +14,7 @@ class Main extends React.Component {
         >
           <div className="container valign-wrapper jc-center">
             <div className="valign center-align white-text">
-              <p className="flowtext hide-on-small-only">Info tentang pertanian sekarang bisa di akses dengan sentuhnan jari</p>
+              <p className="flowtext hide-on-small-only">Info tentang pertanian sekarang bisa di akses dengan sentuhan jari</p>
               <h3>
                 Selamat datang di InfoTani
               </h3>

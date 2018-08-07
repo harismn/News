@@ -67,10 +67,33 @@ const createArticle = (req, res, next) => {
     })
   }
 
+  const deleteArticle = (req, res, next) => {
+    const id = req.params.articleId;
+    Article.remove({ _id: id})
+    .exec()
+    .then(result => {
+        res.status(200).json({
+            message:'Medication deleted',
+            request: {
+                type: 'POST',
+                url: 'http://localhost:3000/article',
+                body: { name: 'String' }
+            }
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error: err
+        });
+    });
+  }
+
 
   
 
 module.exports = {
     listArticle,
     createArticle,
+    deleteArticle
 }
