@@ -14,13 +14,8 @@ var ArticleSchema = new mongoose.Schema({
     content: {
         type: String,
     },
-    photo: {
-        data: Buffer,
-        contentType: String
-      },
     comments: [{
       text: String,
-      created: { type: Date, default: Date.now },
       postedBy: { type: mongoose.Schema.ObjectId, ref: 'Author'}
     }],
     postedBy: {type: mongoose.Schema.ObjectId, ref: 'Author'},

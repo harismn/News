@@ -4,7 +4,6 @@ const router = express.Router();
 
 router.route('/').get(testController.test);
 
-
-//router.route('/patient_record/:id').get(patientController.recordPatients);
+// router.route('/patient_record/:id').get(patientController.recordPatients);
 
 module.exports = router;

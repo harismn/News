@@ -9,24 +9,27 @@ const request = require('request')
 //create article
 const test = (req, res, next) => {
     let url = "http://localhost:3000/article"
-    request(url,(req, (err, fields) => {
+    request(url, (req, (err, fields) => {
         if (err) {
             return res.status(400).json({
                 error: "error"
-            
+
             })
         }
-        var objTest = JSON.parse(fields.body); 
-        console.log(objTest)
-        let test = new Test(objTest)
-        //console.log(fields.body)
-        test
+        
+        var objTest = JSON.parse(fields.body);
+    
+        for(var i; i > objTest.length; i++) {
+            return objTest[i]
+            console.log[i]    
+            }
+        let data = new Test(objTest.user[i])
+        // console.log("ini",data)
+        data
             .save()
             .then(result => {
-                //console.log(result.body);
-                //res.status(201).json({
                 res.send(result)
-                //});
+
             })
             .catch(err => {
                 console.log(err);

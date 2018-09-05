@@ -39,9 +39,7 @@ const ReactBoilerplate = {
         'semantic-ui-react',
         'fs',
         'formidable',
-        'request'
-        
-
+        'request',
       ],
 
       /**
