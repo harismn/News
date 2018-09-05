@@ -38,7 +38,8 @@ const ReactBoilerplate = {
         'axios',
         'semantic-ui-react',
         'fs',
-        'formidable'
+        'formidable',
+        'request'
         
 
       ],

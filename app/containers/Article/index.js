@@ -13,6 +13,7 @@ class Articles extends React.Component {
       articles: []
     }
   }
+  
   componentDidMount() {
 
         if (this.state.isMounted) {
@@ -34,31 +35,52 @@ class Articles extends React.Component {
       .catch(err => console.error(err))
   }
 
+  formatDate(date) {
+    var time = new Date(date);
+    var year = time.getFullYear();
+    var day = time.getDate();
+    var hour = time.getHours();
+    var minute = time.getMinutes();
+    var month = time.getMonth() + 1;
+    var composedTime =
+      day +
+      '/' +
+      month +
+      '/' +
+      year +
+      ' | ' +
+      hour +
+      ':' +
+      (minute < 10 ? '0' + minute : minute);
+    return composedTime;
+}
+
   // componentWillUnmount() {
   //   this.mounted = false;
   //   clearInterval(this.interval)
   // 
 
+  
   renderList(){
 
     console.log("from render list")
     console.log(this.state.articles)
 
     const self = this
-    let render = this.state.articles ? this.state.articles.map((newsm, i) => (
+    let render = this.state.articles ? this.state.articles.map((news, i) => (
       <React.Fragment key={i}>
         <div className="image-wrapper">
           <img className="responsive-img" src="http://loremflickr.com/320/240" />
         </div>
         <div className="content" >
           <h4>{news.tittle}</h4>
-          <p>{news.content}</p>
+          <p>{(news.content).substr(0, 250)}</p>
         </div>
         <div className="footer">
           <div className="row">
             <div className="footer-content">
               <i className="material-icons">today</i>
-              <span>{news.created}</span>
+              <span>{this.formatDate(news.created)}</span>
             </div>
             <div className="footer-content">
               <i className="material-icons">chat bubble outline</i>

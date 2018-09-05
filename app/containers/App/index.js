@@ -18,6 +18,7 @@ import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Login from 'containers/loginPage/Loadable'
 import Register from 'containers/Register/Loadable'
+import DetailPost from 'containers/detailPost/Loadable'
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route exact path="/" component={HomePage} />
         <Route path='/loginPage'  component={Login} />
         <Route path='/Register' component={Register} />
+        <Route path='/DetailPost'  component={DetailPost} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

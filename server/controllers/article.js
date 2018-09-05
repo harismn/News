@@ -4,7 +4,7 @@ const formidable = require('formidable');
 const fs = require('fs');
 const db = mongoose.connection
 
-
+//get all articles
 const listArticle = (req, res, next) => {
     Article.find()
     .select("_id tittle content postedBy created")
@@ -34,7 +34,7 @@ const listArticle = (req, res, next) => {
     });
 }
 
-
+//create article
 const createArticle = (req, res, next) => {
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
@@ -65,15 +65,15 @@ const createArticle = (req, res, next) => {
       });
     });
     })
-  }
-
+  } 
+//delete article
   const deleteArticle = (req, res, next) => {
     const id = req.params.articleId;
     Article.remove({ _id: id})
     .exec()
     .then(result => {
         res.status(200).json({
-            message:'Medication deleted',
+            message:'article deleted',
             request: {
                 type: 'POST',
                 url: 'http://localhost:3000/article',
@@ -89,11 +89,39 @@ const createArticle = (req, res, next) => {
     });
   }
 
+//get article byid
 
+const detailArticle = (req, res, next) =>{
+    const id = req.params.articleId;
+    Article.findById(id)
+    .select(' tittle content photo comments postedBy created _id ')
+    .exec()
+    .then(doc =>{
+        console.log("from database" , doc);
+        if(doc){
+            res.status(200).json({
+                article : doc,
+                request :{
+                    type :'GET',
+                    url : 'http://localhost:3000/article'
+                }
+            })
+        }else{
+            res
+            .status(404)
+            .json({message : "no valid entry found for provided ID"})
+        }
+    })
+    .catch(err => {
+        console.log(err);
+        re.status(500).json({error:err})
+    })
+}
   
 
 module.exports = {
     listArticle,
     createArticle,
-    deleteArticle
+    deleteArticle,
+    detailArticle
 }

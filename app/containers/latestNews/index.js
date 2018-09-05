@@ -10,12 +10,6 @@ const LatestNews = () => {
           <div className="col m4">
             <Article />
           </div>
-          <div className="col m4">
-            <Article />
-          </div>
-          <div className="col m4">
-            <Article />
-          </div>
         </div>
       </div>
     </section>
